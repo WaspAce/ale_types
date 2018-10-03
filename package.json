@@ -1,0 +1,17 @@
+{
+  "name": "ale_types",
+  "version": "0.0.1",
+  "description": "ale types declarations for ts",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd /home/roman/dev/antlace/backend/antlace_engine_stuff/release && ./ale --source=./ale_types/js/index.js",
+    "build": "tsc",
+    "gen_type": "./gen_ale_type.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.cyboorg.com:Architector/ale_types.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

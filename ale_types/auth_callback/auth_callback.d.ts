@@ -1,6 +1,7 @@
 declare class AuthCallback {
   cont(
     username: string,
-    password: string);
+    password: string
+  );
   cancel();
 }
