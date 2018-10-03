@@ -4,7 +4,13 @@ ALE_TYPE_NAME=$1;
 DIR_NAME=$(echo $ALE_TYPE_NAME | sed -r 's/([a-z0-9])([A-Z])/\1_\L\2/g');
 DIR_NAME=$( echo "$DIR_NAME" | tr '[:upper:]' '[:lower:]' );
 
+TYPE_TYPE="class";
+if [[ $2 != "" ]]
+then
+  TYPE_TYPE=$2
+fi
+
 mkdir ./ale_types/$DIR_NAME
 
-echo "declare class $1 {" >> ./ale_types/$DIR_NAME/"$DIR_NAME".d.ts
+echo "declare $TYPE_TYPE $1 {" >> ./ale_types/$DIR_NAME/"$DIR_NAME".d.ts
 echo "}" >> ./ale_types/$DIR_NAME/"$DIR_NAME".d.ts
