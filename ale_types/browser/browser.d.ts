@@ -22,7 +22,7 @@ declare class Browser {
   readonly main_frame: Frame;
   readonly focused_frame: Frame;
   readonly frame_count: number;
-  
+
   get_host(): BrowserHost;
   go_back();
   go_forward();
