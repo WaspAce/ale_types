@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
       "target": "es5",
-      "removeComments": false,
+      "removeComments": true,
       "outDir": "js",
       "sourceMap": true,
       "module": "es2015",
       "typeRoots": [
-        "ale_types"
+        "ale_types/*"
       ]
   }
 }

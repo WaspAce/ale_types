@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ALE_TYPE_NAME=$1;
+DIR_NAME=$(echo $ALE_TYPE_NAME | sed -r 's/([a-z0-9])([A-Z])/\1_\L\2/g');
+DIR_NAME=$( echo "$DIR_NAME" | tr '[:upper:]' '[:lower:]' );
+
+mkdir ./ale_types/$DIR_NAME
+
+echo "declare class $1 {" >> ./ale_types/$DIR_NAME/"$DIR_NAME".d.ts
+echo "}" >> ./ale_types/$DIR_NAME/"$DIR_NAME".d.ts
