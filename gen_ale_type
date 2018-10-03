@@ -17,6 +17,6 @@ echo "}" >> ./ale_types/$DIR_NAME/"$DIR_NAME".d.ts
 
 echo "/// <reference path=\"./$DIR_NAME.d.ts\" />" >> ./ale_types/$DIR_NAME/"$DIR_NAME".t.ts
 echo "import test from '../../test';" >> ./ale_types/$DIR_NAME/"$DIR_NAME".t.ts
-echo "test($ALE_TYPE_NAME);" >> ./ale_types/$DIR_NAME/"$DIR_NAME".t.ts
+echo "test('$ALE_TYPE_NAME', $ALE_TYPE_NAME);" >> ./ale_types/$DIR_NAME/"$DIR_NAME".t.ts
 
 echo "import './ale_types/$DIR_NAME/$DIR_NAME.t';" >> ./index.ts
