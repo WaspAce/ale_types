@@ -4,3 +4,4 @@ import './ale_types/auth_callback/auth_callback.t';
 import './ale_types/point/point.t';
 import './ale_types/rect/rect.t';
 import './ale_types/binary_value/binary_value.t';
+import './ale_types/browser/browser.t';
