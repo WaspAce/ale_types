@@ -23,3 +23,4 @@ import './ale_types/post_data_element/post_data_element.t';
 import './ale_types/post_data_element_type/post_data_element_type.t';
 import './ale_types/browser_settings/browser_settings.t';
 import './ale_types/find_handler/find_handler.t';
+import './ale_types/string_visitor/string_visitor.t';

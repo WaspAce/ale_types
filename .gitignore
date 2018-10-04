@@ -2,3 +2,4 @@ js
 build
 run
 .idea
+node_modules

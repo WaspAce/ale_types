@@ -1,4 +1,3 @@
-// @ts-ignore
 declare class Request {
     readonly is_read_only: boolean;
     url: string;
