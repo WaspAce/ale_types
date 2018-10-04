@@ -46,8 +46,9 @@ declare class BinaryValue {
   copy(): BinaryValue;
 
   /**
-   * Read up to **buffer_size** number of bytes into **buffer**. Reading begins at
-   * the specified byte **data_offset**. Returns the number of bytes read.
+   * Read up to **buffer_size** number of bytes. Reading begins at
+   * the specified byte **data_offset**.
+   * @returns read bytes.
    */
-  get_data(buffer: number[], buffer_size: number, data_offset: number): number;
+  get_data(buffer_size: number, data_offset: number): number[];
 }
