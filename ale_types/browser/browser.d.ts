@@ -10,6 +10,7 @@ declare class Browser {
     window_info: WindowInfo,
     client: BrowserClient,
     url: string,
+    settings: BrowserSettings,
     request_context?: RequestContext
   )
 
