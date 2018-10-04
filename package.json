@@ -7,6 +7,7 @@
     "test": "cd /home/roman/dev/antlace/backend/antlace_engine_stuff/release && ./ale --source=./ale_types/js/index.js",
     "build": "tsc",
     "gen_type": "./gen_ale_type.sh",
+    "predocs": "rm -rf ./docs && mkdir docs",
     "docs": "npx typedoc ./ale_types --out ./docs --includeDeclarations --ignoreCompilerErrors --target es5 --excludeExternals --name ALE --exclude '**/*.t.ts' --hideGenerator --mode file"
   },
   "repository": {

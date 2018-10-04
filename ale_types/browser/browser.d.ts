@@ -1,10 +1,3 @@
-/// <reference path="../window_info/window_info.d.ts" />
-/// <reference path="../browser_client/browser_client.d.ts" />
-/// <reference path="../request_context/request_context.d.ts" />
-/// <reference path="../frame/frame.d.ts" />
-/// <reference path="../browser_host/browser_host.d.ts" />
-/// <reference path="../string_list/string_list.d.ts" />
-
 declare class Browser {
   constructor(
     window_info: WindowInfo,
