@@ -61,6 +61,9 @@ declare class BrowserClient {
      * Called when a new message is received from a different process.
      * @event
      */
-    on_process_message_received: (browser: Browser, message: ProcessMessage) => void;
+    on_process_message_received: (
+        browser: Browser,
+        message: ProcessMessage
+    ) => void;
 
 }
