@@ -59,3 +59,8 @@ import './ale_types/navigation_entry/navigation_entry.t';
 import './ale_types/render_handler/render_handler.t';
 import './ale_types/screen_info/screen_info.t';
 import './ale_types/gui_panel/gui_panel.t';
+import './ale_types/gui_control/gui_control.t';
+import './ale_types/request_handler/request_handler.t';
+import './ale_types/window_open_disposition/window_open_disposition.t';
+import './ale_types/termination_status/termination_status.t';
+import './ale_types/url_request_status/url_request_status.t';
