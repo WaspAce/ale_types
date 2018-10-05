@@ -1,3 +1,6 @@
+/**
+ * Supported event flags.
+ */
 declare enum EventFlags {
     EVENTFLAG_CAPS_LOCK_ON = 0,
     EVENTFLAG_SHIFT_DOWN = 1,
