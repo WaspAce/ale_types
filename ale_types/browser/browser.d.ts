@@ -1,12 +1,6 @@
-<<<<<<< Updated upstream
-=======
-/**
- * Class used to represent a browser window.
- */
->>>>>>> Stashed changes
 declare class Browser {
   /**
-   * Create a new browser window using the window parameters specified by
+   * Synchronously create a new browser window using the window parameters specified by
    * **windowInfo**. If **request_context** is not defined the global request context will be
    * used.
    */

@@ -6,7 +6,9 @@ declare class BrowserClient {
      * 
      * @param delegate Object, on whose behalf (this) events will be triggered.
      */
-    constructor(delegate?: object);
+    constructor(
+        delegate?: object
+    );
 
     /**
      * The handler for context menus. If no handler is provided the default

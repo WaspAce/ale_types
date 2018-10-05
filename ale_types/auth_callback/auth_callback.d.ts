@@ -1,17 +1,18 @@
 /**
- * Класс, объекты которого, используются для асинхронной обработки запросов аутентификации.
- * Не имеет конструктора.
-*/
+ * Callback class used for asynchronous continuation of authentication
+ * requests.
+ */
 declare class AuthCallback {
   /**
-   * Завершает запрос аутентификации с указанными параметрами.
-   * @param username Имя пользователя.
-   * @param password Пароль.
-  */
+   * Continue the authentication request.
+   */
   cont(
     username: string,
     password: string
   ): void;
-  /**Отменяет запрос аутентификации. */
+  
+  /**
+   * Cancel the authentication request.
+   */
   cancel(): void;
 }

@@ -1,7 +1,23 @@
+/**
+ * Class to implement to be notified of asynchronous completion via
+ * CookieManager.delete_cookies().
+ */
 declare class DeleteCookiesCallback {
+    /**
+     * 
+     * @param delegate Object, on whose behalf (this) events will be triggered.
+     */
     constructor(delegate?: object);
 
-    on_complete:(
+    /**
+     * Event that will be called upon completion.
+     * @event
+     */
+    on_complete:
+    /**
+     * @param num_deleted Will be the number of cookies that were deleted or -1 if unknown.
+     */
+    (
         num_deleted: number
     ) => void
 }

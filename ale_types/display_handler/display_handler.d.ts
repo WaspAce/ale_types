@@ -3,6 +3,14 @@
  */
 declare class DisplayHandler {
     /**
+     * 
+     * @param delegate Object, on whose behalf (this) events will be triggered.
+     */
+    constructor(
+        delegate?: object
+    );
+
+    /**
      * Called when a frame's address has changed.
      * @event
      */

@@ -1,3 +1,8 @@
+/**
+ * Chromium error codes.
+ * 
+ * See description [here](https://github.com/adobe/chromium/blob/master/net/base/net_error_list.h).
+ */
 declare enum CefErrorCode {
     ERR_NONE = 0,
     ERR_FAILED = -2,
