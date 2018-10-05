@@ -1,3 +1,6 @@
+/**
+ * Supported value types.
+ */
 declare enum ValueType {
     VTYPE_INVALID = 0,
     VTYPE_NULL = 1,
