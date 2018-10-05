@@ -1,25 +1,64 @@
-/// <reference path="../display_handler/display_handler.d.ts" />
-/// <reference path="../find_handler/find_handler.d.ts" />
-/// <reference path="../focus_handler/focus_handler.d.ts" />
-/// <reference path="../context_menu_handler/context_menu_handler.d.ts" />
-/// <reference path="../js_dialog_handler/js_dialog_handler.d.ts" />
-/// <reference path="../life_span_handler/life_span_handler.d.ts" />
-/// <reference path="../load_handler/load_handler.d.ts" />
-/// <reference path="../render_handler/render_handler.d.ts" />
-/// <reference path="../request_handler/request_handler.d.ts" />
-
-
+/**
+ * Implement this structure to provide handler implementations.
+ */
 declare class BrowserClient {
+    /**
+     * 
+     * @param delegate Object, on whose behalf (this) events will be triggered.
+     */
     constructor(delegate?: object);
 
-    display_handler: DisplayHandler;
-    find_handler: FindHandler;
-    focus_handler: FocusHandler;
+    /**
+     * The handler for context menus. If no handler is provided the default
+     * implementation will be used.
+     */
     context_menu_handler: ContextMenuHandler;
+
+    /**
+     * The handler for browser display state events.
+     */
+    display_handler: DisplayHandler;
+
+    /**
+     * The handler for find result events.
+     */
+    find_handler: FindHandler;
+
+    /**
+     * The handler for focus events.
+     */
+    focus_handler: FocusHandler;
+
+    /**
+     * The handler for JavaScript dialogs. If no handler is provided the
+     * default implementation will be used.
+     */
     js_dialog_handler: JsDialogHandler;
+
+    /**
+     * The handler for browser life span events.
+     */
     life_span_handler: LifeSpanHandler;
+
+    /**
+     * The handler for browser load status events.
+     */
     load_handler: LoadHandler;
+
+    /**
+     * The handler for rendering events.
+     */
     render_handler: RenderHandler;
+
+    /**
+     * The handler for browser request events.
+     */
     request_handler: RequestHandler;
+
+    /**
+     * Called when a new message is received from a different process.
+     * @event
+     */
+    on_process_message_received: (browser: Browser, message: ProcessMessage) => void;
 
 }

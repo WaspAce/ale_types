@@ -48,7 +48,7 @@ declare class BinaryValue {
   /**
    * Read up to **buffer_size** number of bytes. Reading begins at
    * the specified byte **data_offset**.
-   * @returns Read bytes.
+   * @returns Bytes read.
    */
   get_data(buffer_size: number, data_offset: number): number[];
 }
