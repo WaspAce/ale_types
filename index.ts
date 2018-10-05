@@ -41,3 +41,8 @@ import './ale_types/resolve_callback/resolve_callback.t';
 import './ale_types/cef_error_code/cef_error_code.t';
 import './ale_types/callback/callback.t';
 import './ale_types/extension_handler/extension_handler.t';
+import './ale_types/get_extension_resource_callback/get_extension_resource_callback.t';
+import './ale_types/stream_reader/stream_reader.t';
+import './ale_types/request_context_handler/request_context_handler.t';
+import './ale_types/plugin_policy/plugin_policy.t';
+import './ale_types/browser_host/browser_host.t';

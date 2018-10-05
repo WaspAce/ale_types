@@ -1,0 +1,6 @@
+declare enum PluginPolicy {
+    PLUGIN_POLICY_ALLOW = 0,
+    PLUGIN_POLICY_DETECT_IMPORTANT = 0,
+    PLUGIN_POLICY_BLOCK = 2,
+    PLUGIN_POLICY_DISABLE = 3
+}

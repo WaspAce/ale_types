@@ -53,7 +53,7 @@ declare class Extension {
 
     /**
      * Unload this extension if it is not an internal extension and is currently
-     * loaded. Will result in a call to ExtensionHandler.on_extension_unloaded() on success.
+     * loaded. Will result in a call to [[ExtensionHandler]].on_extension_unloaded() on success.
      */
     unload(): void;
 }
