@@ -1,10 +1,10 @@
 {
-  "name": "ale_types",
+  "name": "@ale/types",
   "version": "0.0.1",
   "description": "ale types declarations for ts",
   "main": "index.js",
   "scripts": {
-    "test": "cd /home/roman/dev/antlace/backend/antlace_engine_stuff/release && ./ale --source=./ale_types/js/index.js",
+    "test": "./test.sh",
     "build": "tsc",
     "gen_type": "./gen_ale_type.sh",
     "predocs": "rm -rf ./docs && mkdir docs",
