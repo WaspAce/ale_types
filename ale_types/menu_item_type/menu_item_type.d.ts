@@ -1,0 +1,11 @@
+/**
+ * Supported menu item types.
+ */
+declare enum MenuItemType {
+  MENUITEMTYPE_NONE = 0,
+  MENUITEMTYPE_COMMAND = 1,
+  MENUITEMTYPE_CHECK = 2,
+  MENUITEMTYPE_RADIO = 3,
+  MENUITEMTYPE_SEPARATOR = 4,
+  MENUITEMTYPE_SUBMENU = 5
+}
