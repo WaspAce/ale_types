@@ -93,3 +93,4 @@ import './ale_types/life_span_handler/life_span_handler.t';
 import './ale_types/popup_features/popup_features.t';
 import './ale_types/load_handler/load_handler.t';
 import './ale_types/loader/loader.t';
+import './ale_types/js_dialogtype/js_dialogtype.t';
