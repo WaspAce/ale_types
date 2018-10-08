@@ -63,7 +63,10 @@ declare class BrowserClient {
      */
     on_process_message_received: (
         browser: Browser,
-        message: ProcessMessage
+        message: {
+            name: string;
+            text: string;
+        }
     ) => void;
 
 }

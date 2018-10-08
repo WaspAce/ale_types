@@ -68,3 +68,12 @@ import './ale_types/context_menu_media_state_flags/context_menu_media_state_flag
 import './ale_types/context_menu_media_type/context_menu_media_type.t';
 import './ale_types/context_menu_type_flags/context_menu_type_flags.t';
 import './ale_types/context_menu_params/context_menu_params.t';
+import './ale_types/cef_app/cef_app.t';
+import './ale_types/focus_handler/focus_handler.t';
+import './ale_types/focus_source/focus_source.t';
+import './ale_types/fs_element_type/fs_element_type.t';
+import './ale_types/gui_button/gui_button.t';
+import './ale_types/gui_edit/gui_edit.t';
+import './ale_types/gui_form/gui_form.t';
+import './ale_types/gui_splitter/gui_splitter.t';
+import './ale_types/gui_tabs/gui_tabs.t';
