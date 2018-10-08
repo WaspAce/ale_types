@@ -90,4 +90,8 @@ import './ale_types/response/response.t';
 import './ale_types/mysql/mysql.t';
 import './ale_types/mysql_result/mysql_result.t';
 import './ale_types/js_dialog_callback/js_dialog_callback.t';
+<<<<<<< HEAD
+>>>>>>> master
+=======
+import './ale_types/js_dialog_handler/js_dialog_handler.t';
 >>>>>>> master
