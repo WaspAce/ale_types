@@ -1,3 +1,8 @@
+/**
+ * The manner in which a link click should be opened. These constants match
+ * their equivalents in Chromium's window_open_disposition.h and should not be
+ * renumbered.
+ */
 declare enum WindowOpenDisposition {
     WOD_UNKNOWN = 0,
     WOD_CURRENT_TAB = 1,
