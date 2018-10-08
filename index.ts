@@ -77,7 +77,6 @@ import './ale_types/gui_edit/gui_edit.t';
 import './ale_types/gui_form/gui_form.t';
 import './ale_types/gui_splitter/gui_splitter.t';
 import './ale_types/gui_tabs/gui_tabs.t';
-<<<<<<< HEAD
 import './ale_types/menu_color_type/menu_color_type.t';
 import './ale_types/window_state/window_state.t';
 import './ale_types/tab_show_close_policy/tab_show_close_policy.t';
@@ -85,13 +84,9 @@ import './ale_types/return_value/return_value.t';
 import './ale_types/resize_style/resize_style.t';
 import './ale_types/menu_item_type/menu_item_type.t';
 import './ale_types/menu_id/menu_id.t';
-=======
 import './ale_types/response/response.t';
 import './ale_types/mysql/mysql.t';
 import './ale_types/mysql_result/mysql_result.t';
 import './ale_types/js_dialog_callback/js_dialog_callback.t';
-<<<<<<< HEAD
->>>>>>> master
-=======
 import './ale_types/js_dialog_handler/js_dialog_handler.t';
->>>>>>> master
+import './ale_types/life_span_handler/life_span_handler.t';
