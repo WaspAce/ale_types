@@ -1,4 +1,4 @@
-declare class MysqlResult {
+declare class MySqlResult {
     readonly error_code: number;
     readonly error_message: string;
     readonly insert_id: number;

@@ -1,4 +1,4 @@
-declare class Mysql {
+declare class MySql {
     constructor(object: {
         readonly host: string,
         readonly port: number,
@@ -9,5 +9,5 @@ declare class Mysql {
 
     query(
         query_string: string
-    ): MysqlResult;
+    ): MySqlResult;
 }
