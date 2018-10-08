@@ -1,3 +1,6 @@
+/**
+ * Supported context menu edit state bit flags.
+ */
 declare enum ContextMenuEditStateFlags {
   CM_EDITFLAG_CAN_UNDO = 0,
   CM_EDITFLAG_CAN_REDO = 1,

@@ -1,3 +1,6 @@
+/**
+ * Supported context menu media state bit flags.
+ */
 declare enum ContextMenuMediaStateFlags {
   CM_MEDIAFLAG_ERROR = 0,
   CM_MEDIAFLAG_PAUSED = 1,
