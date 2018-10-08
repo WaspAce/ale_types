@@ -77,3 +77,5 @@ import './ale_types/gui_edit/gui_edit.t';
 import './ale_types/gui_form/gui_form.t';
 import './ale_types/gui_splitter/gui_splitter.t';
 import './ale_types/gui_tabs/gui_tabs.t';
+import './ale_types/response/response.t';
+import './ale_types/mysql/mysql.t';
