@@ -1,3 +1,6 @@
+/**
+ * Popup window features.
+ */
 declare class PopupFeatures {
     x: number;
     x_set: boolean;
