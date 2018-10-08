@@ -82,3 +82,4 @@ import './ale_types/mysql/mysql.t';
 import './ale_types/mysql_result/mysql_result.t';
 import './ale_types/js_dialog_callback/js_dialog_callback.t';
 import './ale_types/js_dialog_handler/js_dialog_handler.t';
+import './ale_types/life_span_handler/life_span_handler.t';
