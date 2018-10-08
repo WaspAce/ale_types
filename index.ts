@@ -79,3 +79,4 @@ import './ale_types/gui_splitter/gui_splitter.t';
 import './ale_types/gui_tabs/gui_tabs.t';
 import './ale_types/response/response.t';
 import './ale_types/mysql/mysql.t';
+import './ale_types/mysql_result/mysql_result.t';
