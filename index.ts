@@ -96,3 +96,4 @@ import './ale_types/loader/loader.t';
 import './ale_types/js_dialog_type/js_dialog_type.t';
 import './ale_types/resource_handler/resource_handler.t';
 import './ale_types/response_filter_status/response_filter_status.t';
+import './ale_types/response_filter/response_filter.t';
