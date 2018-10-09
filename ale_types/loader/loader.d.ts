@@ -3,7 +3,7 @@ type ResolveHookCallback = (
     name: string
 ) => void;
 
-declare class Loader {
+declare class loader {
     static compile_module(
         name: string,
         code: string
