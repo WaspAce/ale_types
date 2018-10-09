@@ -11,13 +11,13 @@ ALE_PATH="./ale_types/${DIR_NAME}"
 if [[ $1 == "" ]]
 then
     echo -e "${RED}Имя, сестра!${NC}"
-    exit 0
+    exit 1
 fi
 
 if [ -d "$ALE_PATH" ]
 then
     echo -e "${RED} класс ${ALE_TYPE_NAME} уже описан, сестра!${NC}"
-    exit 0
+    exit 1
 fi
 
 
