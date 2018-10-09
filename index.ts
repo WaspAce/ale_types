@@ -104,3 +104,5 @@ import './ale_types/value_type/value_type.t';
 import './ale_types/window_info/window_info.t';
 import './ale_types/window_open_disposition/window_open_disposition.t';
 import './ale_types/window_state/window_state.t';
+system.exit();
+import './ale_types/system/system.t';
