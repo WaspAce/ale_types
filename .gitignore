@@ -4,3 +4,4 @@ run
 .idea
 node_modules
 docs
+index.ts
