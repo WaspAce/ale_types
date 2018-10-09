@@ -8,5 +8,7 @@ declare class system {
   static get_tick_count(): number;
   static pause(): void;
   static resume(): void;
-  static exit(): void;
+  static exit(
+    exit_code: number
+  ): void;
 }
