@@ -1,5 +1,5 @@
 {
-  "name": "@ale/types",
+  "name": "ale_types",
   "version": "0.0.1",
   "description": "ale types declarations for ts",
   "main": "index.js",
