@@ -3,22 +3,22 @@ declare class CEF_APP {
   /**
    * 
    */
-  readonly settings: CefAppSettings;
+  static readonly settings: CefAppSettings;
 
   /**
    * 
    */
-  loop_interval_ms: number;
+  static loop_interval_ms: number;
 
   /**
    * 
    */
-  external_message_pump: boolean;
+  static external_message_pump: boolean;
 
   /**
    * 
    */
-  readonly initialized: boolean;
+  static readonly initialized: boolean;
 
 
   /**
@@ -31,12 +31,12 @@ declare class CEF_APP {
   /**
    * 
    */
-  get_global_request_context(): RequestContext;
+  static get_global_request_context(): RequestContext;
 
   /**
    * 
    */
-  get_global_cookie_manager(): CookieManager;
+  static get_global_cookie_manager(): CookieManager;
 
   /**
    * Asynchronously create a new browser window using the window parameters specified by
