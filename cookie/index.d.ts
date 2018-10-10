@@ -56,4 +56,9 @@ declare class Cookie {
      * The cookie expiration date is only valid if **has_expires** is **true**.
      */
     expires: CefTime;
+
+    /**
+     * 
+     */
+    clone(): Cookie;
 }
