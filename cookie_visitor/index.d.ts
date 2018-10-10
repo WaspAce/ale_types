@@ -17,6 +17,7 @@ declare class CookieVisitor {
      */
     on_visit:
     /**
+     * @param cookie Do not use cookie outside this callback.
      * @param count The 0-based index for the current cookie.
      * @param total The total number of cookies.
      * @return **true** to delete the cookie currently being visited.
