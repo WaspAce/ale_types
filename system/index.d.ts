@@ -11,4 +11,5 @@ declare class system {
   static exit(
     exit_code: number
   ): void;
+  static readln(): string;
 }
