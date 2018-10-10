@@ -1,6 +1,6 @@
 {
   "name": "ale_types",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "ale types declarations for ts",
   "main": "index.js",
   "scripts": {

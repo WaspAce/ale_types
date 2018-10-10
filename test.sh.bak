@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-cd /home/roman/dev/antlace/backend/antlace_engine_stuff/release && ./ale --source=./ale_types/js/index.js
