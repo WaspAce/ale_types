@@ -113,4 +113,12 @@ declare class Browser {
    * Returns the names of all existing frames into **names**.
    */
   get_frame_names(names: StringList): void;
+
+  /**
+   * Send a message to the specified |target_process|.
+   * @returns Returns true if the message was sent successfully.
+   */
+  send_process_message(
+    
+  ): boolean;
 }
