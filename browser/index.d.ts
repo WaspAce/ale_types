@@ -119,6 +119,7 @@ declare class Browser {
    * @returns Returns true if the message was sent successfully.
    */
   send_process_message(
-    
+    target_process: ProcessId,
+    message: ProcessMessage
   ): boolean;
 }
