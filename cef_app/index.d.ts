@@ -24,9 +24,7 @@ declare class CEF_APP {
   /**
    * 
    */
-  static init(
-    settings: CefAppSettings
-  );
+  static init();
 
   /**
    * 
@@ -50,4 +48,24 @@ declare class CEF_APP {
     settings: BrowserSettings,
     request_context?: RequestContext
   );
+
+  /**
+   * Called after the main thread has been created for a new render process.
+   * Provides an opportunity to specify extra information that will be passed to
+   * [[RenderProcessHandler]].on_render_thread_created() in the render process.
+   * @event
+   */
+  static on_render_process_thread_created:
+  /**
+   * @param extra_info Do not keep a reference to |extra_info| outside of this function.
+   */
+  (
+    extra_info: ListValue
+  ) => void;
+
+  /**
+   * Called after the CEF context has been initialized.
+   * @event
+   */
+  static on_context_initialized: () => void;
 }
