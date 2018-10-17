@@ -20,6 +20,11 @@ declare class CEF_APP {
    */
   static readonly initialized: boolean;
 
+  /**
+   * 
+   */
+  static subprocess_source: string;
+
 
   /**
    * 
