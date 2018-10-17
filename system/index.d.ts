@@ -1,6 +1,6 @@
 declare class system {
-  gui_loop_interval_ms: number;
-  gc_interval_ms: number;
+  static gui_loop_interval_ms: number;
+  static gc_interval_ms: number;
 
   static sleep(
     interval_ms: number
