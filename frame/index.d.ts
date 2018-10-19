@@ -75,30 +75,41 @@ declare class Frame {
      * Retrieve this frame's HTML source as a string sent to the specified
      * **visitor**.
      */
-    get_source(visitor: StringVisitor): void;
+    get_source(
+        visitor: StringVisitor
+    ): void;
 
     /**
      * Retrieve this frame's display text as a string sent to the specified
      * **visitor**.
      */
-    get_text(visitor: StringVisitor): void;
+    get_text(
+        visitor: StringVisitor
+    ): void;
 
     /**
      * Load the request represented by the **request** object.
      */
-    load_request(request: Request): void;
+    load_request(
+        request: Request
+    ): void;
 
     /**
      * Load the specified **url**.
      */
-    load_url(url: string): void;
+    load_url(
+        url: string
+    ): void;
 
     /**
      * Load the contents of **string_val** with the specified dummy **url**.
      * @param url Should have a standard scheme (for example, http scheme) or behaviors like
      * link clicks and web security restrictions may not behave as expected.
      */
-    load_string(string_val: string, url: string): void;
+    load_string(
+        string_val: string,
+        url: string
+    ): void;
 
     /**
      * Execute a string of JavaScript code in this frame.
@@ -107,7 +118,11 @@ declare class Frame {
      * error.
      * @param start_line The base line number to use for error reporting.
      */
-    execute_java_script(code: string, script_url: string, url: string, start_line: number): void;
+    execute_java_script(
+        code: string,
+        script_url: string,
+        start_line: number
+    ): void;
 
     /**
      * @returns The parent of this frame or null if this is the main (top-level)
