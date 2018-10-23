@@ -67,7 +67,7 @@ declare class ContextMenuHandler {
     frame: Frame,
     params: ContextMenuParams,
     command_id: MenuId,
-    event_flags
+    event_flags: EventFlags[]
   ) => boolean;
 
   /**
