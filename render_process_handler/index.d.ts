@@ -1,3 +1,6 @@
+/**
+ * Class used to implement render process callbacks.
+ */
 declare class RenderProcessHandler {
   /**
    * 
@@ -11,6 +14,11 @@ declare class RenderProcessHandler {
    * Handler for browser load status events.
    */
   load_handler: LoadHandler;
+
+  /**
+   * 
+   */
+  v8_extension: V8Extension;
 
 
   /**

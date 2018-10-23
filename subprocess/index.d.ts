@@ -11,13 +11,4 @@ declare class subprocess {
    * 
    */
   static start();
-
-  /**
-   * 
-   */
-  static register_js_extension(
-    name: string,
-    code: string,
-    handler: V8Handler
-  ): boolean;
 }
