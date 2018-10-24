@@ -7,7 +7,7 @@ declare class RunContextMenuCallback {
    */
   cont(
     command_id: number,
-    event_flags: EventFlags
+    event_flags: EventFlags[]
   )
 
   /**
