@@ -53,6 +53,7 @@ declare class V8Extension {
    *     };
    *   })();
    * ```
+   * 
    *  Example usage in the page:
    * ```javascript
    *   // Call the function.
