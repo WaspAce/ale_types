@@ -57,4 +57,16 @@ declare abstract class GuiControl {
      * @event
      */
     on_click: () => void;
+
+    /**
+     * Called when control's rect coordinates changed.
+     * @event
+     */
+    on_change_bounds:
+    /**
+     * @param rect The new control's rectangle.
+     */
+    (
+        rect: Rect
+    ) => void;
 }
