@@ -64,7 +64,9 @@ declare class V8 {
   /**
    * Create a new [[V8Value]] object of type string.
    */
-  static create_string(): V8Value;
+  static create_string(
+    value: string
+  ): V8Value;
 
   /**
    * Create a new [[V8Value]] object of type object.
