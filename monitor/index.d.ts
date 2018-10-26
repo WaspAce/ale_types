@@ -38,4 +38,9 @@ declare class Monitor {
    * true if this is the primary monitor of the system.
    */
   readonly is_primary: boolean
+
+  /**
+   * Pixels per inch;
+   */
+  readonly ppi: number;
 }
