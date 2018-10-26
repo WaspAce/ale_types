@@ -27,4 +27,13 @@ declare class GuiForm extends GuiControl {
    * @return Return true to allow window close.
    */
   () => boolean;
+
+  /**
+   * Called when window_state is changed.
+   * @event
+   */
+  on_window_state_change:
+  (
+    window_state: WindowState
+  ) => void;
 }
