@@ -10,67 +10,23 @@ declare class RenderHandler {
         delegate?: object
     );
 
+    /**
+     * The root window rectangle in screen coordinates.
+     */
+    readonly root_screen_rect: Rect;
 
     /**
-     * Called to retrieve the root window rectangle in screen coordinates.
-     * @event
+     * The view rectangle which is relative to screen
+     * coordinates.
      */
-    on_get_root_screen_rect:
-    /**
-     * Modify |rect| and return true if the rectangle was provided.
-     * If this function returns false the rectangle from [[on_get_view_rect]] will be used.
-     */
-    (
-        browser: Browser,
-        rect: Rect
-    ) => boolean;
+    readonly view_rect: Rect;
 
     /**
-     * Called to retrieve the view rectangle which is relative to screen
-	 * coordinates.
-     * @event
-     */
-    on_get_view_rect:
-    /**
-     * Modify |rect| if it was changed.
-     * This function must always provide a non-null rectangle.
-     */
-    (
-        browser: Browser,
-        rect: Rect
-    ) => void;
-
-    /**
-     * Called to retrieve the translation from view coordinates to actual screen
-	 * coordinates.
-     * @event
-     */
-    on_get_screen_point:
-    /**
-     * @return Return true if screen coordinates were provided.
-     */
-    (
-        browser: Browser,
-        view_point: Point,
-        screen_point: Point
-    ) => boolean;
-
-    /**
-     * Called to allow the client to fill in the [[ScreenInfo]] object with
+     * The client to fill in the CefScreenInfo object with
      * appropriate values.
-     * @event
      */
-    on_get_screen_info:
-    /**
-     * If the screen info rectangle is left null the rectangle from on_get_view_rect
-	 * will be used. If the rectangle is still null or invalid popups may not be
-	 * drawn correctly.
-     * @return Return true if the |screen_info| structure has been modified.
-     */
-    (
-        browser: Browser,
-        screen_info: ScreenInfo
-    ) => boolean;
+    readonly screen_info: ScreenInfo;
+
 
     /**
      * Called when the browser wants to show or hide the popup widget.
