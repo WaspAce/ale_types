@@ -197,6 +197,12 @@ declare class BrowserHost {
     ): void;
 
     /**
+     * Issue a BeginFrame request to Chromium. Only valid when
+     * [[WindowInfo]].external_begin_frame_enabled is set to true.
+     */
+    send_external_begin_frame(): void;
+
+    /**
      * Send a key event to the browser.
      */
     send_key_event(

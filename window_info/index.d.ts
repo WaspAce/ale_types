@@ -8,9 +8,8 @@ declare class WindowInfo {
     height: number;
 
     /**
-     * Set to true to enable transparent painting. When this value is true
-     * a transparent background color will be used (RGBA=0x00000000).
-     * When this value is false the background will be white and opaque.
+     * Set to true to enable the ability to issue BeginFrame requests from the
+     * client application by calling [[BrowserHost]].send_external_begin_frame.
      */
-    transparent_painting_enable: boolean;
+    external_begin_frame_enabled: boolean;
 }
