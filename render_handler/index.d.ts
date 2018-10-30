@@ -13,19 +13,19 @@ declare class RenderHandler {
     /**
      * The root window rectangle in screen coordinates.
      */
-    readonly root_screen_rect: Rect;
+    root_screen_rect: Rect;
 
     /**
      * The view rectangle which is relative to screen
      * coordinates.
      */
-    readonly view_rect: Rect;
+    view_rect: Rect;
 
     /**
-     * The client to fill in the CefScreenInfo object with
+     * The client to fill in the [[ScreenInfo]] object with
      * appropriate values.
      */
-    readonly screen_info: ScreenInfo;
+    screen_info: ScreenInfo;
 
 
     /**
@@ -97,6 +97,20 @@ declare class RenderHandler {
         selected_range: Range,
         character_bounds: Range[]
     ) => void;
+
+    /**
+     * Called to retrieve the translation from view coordinates to actual screen
+	 * coordinates.
+     */
+    on_get_screen_point:
+    /**
+     * @return Return true if the screen coordinates were provided.
+     */
+    (
+        browser: Browser,
+        view_point: Point,
+        screen_point: Point
+    ) => boolean;
 
     /**
      * Add direct targets to draw images on.

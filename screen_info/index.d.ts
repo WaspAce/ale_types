@@ -34,7 +34,7 @@ declare class ScreenInfo {
      * The |rect| and |available_rect| properties are used to determine the
      * available surface for rendering popup views.
      */
-    rect: Rect;
+    readonly rect: Rect;
 
     /**
      * This is set from the rcWork member of MONITORINFOEX, to whit:
@@ -49,5 +49,5 @@ declare class ScreenInfo {
      * The |rect| and |available_rect| properties are used to determine the
      * available surface for rendering popup views.
      */
-    available_rect: Rect;
+    readonly available_rect: Rect;
 }
