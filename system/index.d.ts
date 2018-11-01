@@ -12,4 +12,10 @@ declare class system {
     exit_code: number
   ): void;
   static read_ln(): string;
+  static cmd_has_switch(
+    name: string
+  ): boolean;
+  static get_cmd_switch_value(
+    name: string
+  ): string;
 }
