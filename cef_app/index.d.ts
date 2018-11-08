@@ -33,9 +33,11 @@ declare class CEF_APP {
 
 
   /**
-   * 
+   * @param delegate Object, on whose behalf (this) events will be triggered.
    */
-  static init();
+  static init(
+    delegate?: object
+  );
 
   /**
    * 
@@ -66,4 +68,18 @@ declare class CEF_APP {
    * @event
    */
   static on_context_initialized: () => void;
+
+  /**
+   * Provides an opportunity to register custom schemes.
+   * This function is called for each process and the
+   * registered schemes should be the same across all processes.
+   * @event
+   */
+  static on_register_custom_schemes:
+  /**
+   * @param registrar Do not keep a reference to the |registrar| object.
+   */
+  (
+    registrar: SchemeRegistrar
+  ) => void;
 }
