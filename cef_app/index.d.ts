@@ -62,24 +62,22 @@ declare class CEF_APP {
     request_context?: RequestContext
   );
 
+  /**
+   * Register a custom scheme. This function should not be called for the built-
+	 * in HTTP, HTTPS, FILE, FTP, ABOUT and DATA schemes.
+	 *
+	 * This function should only be called once per unique scheme.scheme_name value.
+   * 
+   * MUST be called before [[CEF_APP]].init() called.
+   */
+  static add_custom_scheme(
+    scheme: CustomScheme
+  ): void;
+
 
   /**
    * Called after the CEF context has been initialized.
    * @event
    */
   static on_context_initialized: () => void;
-
-  /**
-   * Provides an opportunity to register custom schemes.
-   * This function is called for each process and the
-   * registered schemes should be the same across all processes.
-   * @event
-   */
-  static on_register_custom_schemes:
-  /**
-   * @param registrar Do not keep a reference to the |registrar| object.
-   */
-  (
-    registrar: SchemeRegistrar
-  ) => void;
 }
