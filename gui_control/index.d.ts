@@ -41,6 +41,20 @@ declare abstract class GuiControl {
     readonly rect: Rect;
 
     /**
+     * Converts absolute Screen coordinates into Client relative coordinates.
+     */
+    client_to_screen(
+        point: Point
+    ): Point;
+
+    /**
+     * Translates a given point from client area coordinates to global screen coordinates.
+     */
+    screen_to_client(
+        point: Point
+    ): Point;
+
+    /**
      * Called when control resized.
      * @event
      */
