@@ -92,7 +92,7 @@ declare class CEF_APP {
    */
   static register_scheme_handler_factory(
     scheme_name: string,
-    somain_name: string,
+    domain_name: string,
     factory: SchemeHandlerFactory
   ): boolean;
 
