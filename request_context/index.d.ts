@@ -50,18 +50,19 @@ declare class RequestContext {
      * will be ignored for non-standard schemes. If |scheme_name| is a built-in
      * scheme and no handler is returned by |factory| then the built-in scheme
      * handler factory will be called. If |scheme_name| is a custom scheme then
-     * you must also implement the cef_app_t::on_register_custom_schemes()
-     * function in all processes. This function may be called multiple times to
-     * change or remove the factory that matches the specified |scheme_name| and
-     * optional |domain_name|. Returns false (0) if an error occurs. This function
-     * may be called on any thread in the browser process.
+     * you must also implement the [[CEF_APP]].add_custom_scheme() function in main
+     * process and [[subprocess]].add_custom_scheme() in subprocess.
+     * This function may be called multiple times to change or remove the factory
+     * that matches the specified |scheme_name| and optional |domain_name|.
      * 
-     * TODO
+     * This function may be called in the browser process.
+     * 
+     * @returns Returns false if an error occurs.
      */
     register_scheme_handler_factory(
         scheme_name: string,
         domain_name: string,
-        factory: any
+        factory: SchemeHandlerFactory
     ): boolean;
 
     /**
