@@ -29,9 +29,9 @@ declare class ResourceHandler {
    */
   on_get_response_headers:
   /**
-   * If the response length is not known set |response_length| to -1 and read_response()
+   * If the response length is not known set |response_length| to -1 and on_read_response()
    * will be called until it returns false . If the response length is known set |response_length| to
-   * a positive value and read_response() will be called until it returns false or the specified
+   * a positive value and on_read_response() will be called until it returns false or the specified
    * number of bytes have been read.
    * @param response Use the |response| object to set the mime type, http status code and other
    * optional header values. If an error occured while setting up the request you can call set_error()
