@@ -18,4 +18,10 @@ declare class system {
   static get_cmd_switch_value(
     name: string
   ): string;
+  static bytes_of(
+    value: string
+  ): number[];
+  static string_of(
+    bytes: number[]
+  ): string;
 }
