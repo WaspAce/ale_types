@@ -40,8 +40,7 @@ declare class ResourceHandler {
    * URL.
    */
   (
-    response: Response,
-    redirect_url: string
+    response: Response
   ) => {
     response_length: number,
     redirect_url: string
