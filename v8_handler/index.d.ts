@@ -16,6 +16,7 @@ declare class V8Handler {
    */
   on_execute:
   /**
+   * @param context Execution context.
    * @param object The receiver ('this' object) of the function.
    * @param arguments The list of arguments passed to the function.
    * @param ret_val If execution succeeds set |ret_val| to the
@@ -25,6 +26,7 @@ declare class V8Handler {
    * @param result Set to true if execution was handled.
    */
   (
+    context: V8Context,
     name: string,
     object: V8Value,
     arguments: V8Value[]
