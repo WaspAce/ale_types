@@ -71,6 +71,12 @@
 
 
   /**
+   * 
+   * @returns [[V8Context]] for this value.
+   */
+  get_context(): V8Context;
+
+  /**
    * @returns Returns true if this object is pointing to the same handle as |that|
 	 * object.
    */

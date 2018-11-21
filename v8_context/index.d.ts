@@ -3,8 +3,8 @@
  */
 declare class V8Context {
   /**
-   * true if the underlying handle is valid and it can be accessed
-   * on the current thread. Do not call any other functions if this is false.
+   * true if the underlying handle is valid.
+   * Do not call any other functions if this is false.
    */
   readonly is_valid: boolean;
 
@@ -23,24 +23,8 @@ declare class V8Context {
 
   /**
    * @returns Returns the global object for this context.
-   * The context must be entered before calling this function.
    */
   get_global(): V8Value;
-
-  /**
-   * Enter this context. A context must be explicitly entered before creating a
-	 * V8 Object, Array, Function or Date asynchronously. exit() must be called
-	 * the same number of times as enter() before releasing this context. V8
-	 * objects belong to the context in which they are created.
-   * @returns Returns true if the scope was entered successfully.
-   */
-  enter(): boolean;
-
-  /**
-   * Exit this context. Call this function only after calling enter().
-   * @returns Returns true if the scope was exited successfully.
-   */
-  exit(): boolean;
 
   /**
    * @returns Returns true if this object is pointing to the same handle as |that| object.
@@ -66,4 +50,77 @@ declare class V8Context {
     ret_val: V8Value,
     exception: V8Exception
   }
+
+  /**
+   * Create a new [[V8Value]] object of type undefined.
+   */
+  create_undefined(): V8Value;
+
+  /**
+   * Create a new [[V8Value]] object of type null.
+   */
+  create_null(): V8Value;
+
+  /**
+   * Create a new [[V8Value]] object of type bool.
+   */
+  create_bool(
+    value: boolean
+  ): V8Value;
+
+  /**
+   * Create a new [[V8Value]] object of type int.
+   */
+  create_int(
+    value: number
+  ): V8Value;
+
+  /**
+   * Create a new [[V8Value]] object of type unsigned int.
+   */
+  create_uint(
+    value: number
+  ): V8Value;
+
+  /**
+   * Create a new [[V8Value]] object of type double.
+   */
+  create_double(
+    value: number
+  ): V8Value;
+
+  /**
+   * Create a new [[V8Value]] object of type Date.
+   */
+  create_date(
+    date: CefTime
+  ): V8Value;
+
+  /**
+   * Create a new [[V8Value]] object of type string.
+   */
+  create_string(
+    value: string
+  ): V8Value;
+
+  /**
+   * Create a new [[V8Value]] object of type object.
+   */
+  create_object(): V8Value;
+
+  /**
+   * Create a new [[V8Value]] object of type array with the specified |length|.
+	 * If |length| is negative the returned array will have length 0.
+   */
+  create_array(
+    length: number
+  ): V8Value;
+
+  /**
+   * Create a new [[V8Value]] object of type function.
+   */
+  create_function(
+    name: string,
+    handler: V8Handler
+  ): V8Value;
 }
