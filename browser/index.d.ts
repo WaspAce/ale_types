@@ -44,16 +44,6 @@ declare class Browser {
   readonly identifier: number;
 
   /**
-   * The main (top-level) frame for the browser window.
-   */
-  readonly main_frame: Frame;
-
-  /**
-   * The focused frame for the browser window.
-   */
-  readonly focused_frame: Frame;
-
-  /**
    * The number of frames that currently exist.
    */
   readonly frame_count: number;
@@ -122,4 +112,14 @@ declare class Browser {
     target_process: ProcessId,
     message: ProcessMessage
   ): boolean;
+
+  /**
+   * @returns Returns the main (top-level) frame for the browser window.
+   */
+  get_main_frame(): Frame;
+
+  /**
+   * @returns Returns the focused frame for the browser window.
+   */
+  get_focused_frame(): Frame;
 }
