@@ -59,6 +59,7 @@ declare class BrowserClient {
 
     /**
      * Called when a new message is received from a different process.
+     * Do not use |message| object outside this function.
      * @event
      */
     on_process_message_received: (
