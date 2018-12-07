@@ -10,7 +10,8 @@ declare class system {
   static pause(): void;
   static resume(): void;
   static exit(
-    exit_code: number
+    exit_code?: number,
+    exit_message?: string
   ): void;
   static read_ln(): string;
   static cmd_has_switch(
