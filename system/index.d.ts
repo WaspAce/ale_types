@@ -38,4 +38,11 @@ declare class system {
   static string_of(
     bytes: number[]
   ): string;
+
+  /**
+   * @returns Returns IP address of given domain.
+   */
+  static resolve_domain(
+    domain: string
+  ): string;
 }
