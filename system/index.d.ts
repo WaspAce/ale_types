@@ -3,6 +3,18 @@ declare class system {
   static gc_interval_ms: number;
   static readonly dev_mode: boolean;
 
+  /**
+   * Called to resolve domain name to IP address.
+   * @event
+   */
+  static on_resolve_domain:
+  /**
+   * @return Return IP address or empty string to use defautl implementation.
+   */
+  (
+      domain: string
+  ) => string;
+
   static sleep(
     interval_ms: number
   ): void;
