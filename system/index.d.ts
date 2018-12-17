@@ -5,11 +5,6 @@ declare class system {
   static gui_loop_interval_ms: number;
 
   /**
-   * Interval used to collect garbage.
-   */
-  static gc_interval_ms: number;
-
-  /**
    * true if ale runs in developer mode.
    */
   static readonly dev_mode: boolean;
