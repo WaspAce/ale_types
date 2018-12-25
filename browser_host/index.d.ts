@@ -223,6 +223,7 @@ declare class BrowserHost {
     /**
      * Send a mouse move event to the browser. The |x| and |y| coordinates are
      * relative to the upper-left corner of the view.
+     * The event will be skipped if less than 15 milliseconds have passed from the last one.
      */
     send_mouse_move_event(
         event: MouseEvent,
