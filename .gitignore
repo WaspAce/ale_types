@@ -5,5 +5,4 @@ run
 node_modules
 docs
 index.ts
-package.json
 package-lock.json
