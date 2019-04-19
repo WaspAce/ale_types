@@ -4,8 +4,16 @@
   "description": "ale types declarations for ts",
   "main": "index.js",
   "scripts": {
-    "test": "",
-    "build": "tsc"
+    "test": "./test.sh",
+    "build": "tsc",
+    "gen_type": "./gen_ale_type.sh",
+    "predocs": "rm -rf ./docs && mkdir docs",
+    "docs": "npx typedoc --out ./docs --includeDeclarations --ignoreCompilerErrors --target es5 --excludeExternals --name ALE --exclude '**/*.t.ts' --hideGenerator --mode file",
+    "deploy": "npm run docs && rsync -r -e ssh ./docs/ panel.waspace:/var/www/ale.waspace.net/html/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.cyboorg.com:Architector/ale_types.git"
   },
   "author": "",
   "license": "ISC",
