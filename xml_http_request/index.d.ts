@@ -5,6 +5,8 @@ declare class XMLHttpRequest {
   readonly responseText: string;
   readonly readyState: number;
 
+  constructor(delegate?: object);
+
   open(
     method: string,
     url: string,
