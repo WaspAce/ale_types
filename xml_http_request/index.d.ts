@@ -29,6 +29,8 @@ declare class XMLHttpRequest {
   getAllResponseHeaders(): string;
 
   abort(): void;
+
+  getResponseBytes(): number[];
   
   onreadystatechange: () => void;
   ontimeout: () => void;
