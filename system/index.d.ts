@@ -15,6 +15,11 @@ declare class system {
   static readonly is_subprocess: boolean;
 
   /**
+   * true if spidermonkey can collect garbage.
+   */
+  static can_gc: boolean;
+
+  /**
    * Pause script execution for |interval_ms| milliseconds.
    * Does not pause asynchronous operations.
    */
