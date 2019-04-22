@@ -14,7 +14,7 @@ declare class XMLHttpRequest {
   ): void;
 
   send(
-    body: number[] | string
+    body?: number[] | string
   ): void;
 
   setRequestHeader(
