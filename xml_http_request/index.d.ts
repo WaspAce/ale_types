@@ -33,6 +33,10 @@ declare class XMLHttpRequest {
   abort(): void;
 
   getResponseBytes(): number[];
+
+  removeRequestHeader(
+    key: string
+  );
   
   onreadystatechange: () => void;
   ontimeout: () => void;
