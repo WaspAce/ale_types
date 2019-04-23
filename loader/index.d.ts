@@ -18,6 +18,11 @@ declare class loader {
         path: string
     ): string;
 
+    static save_to_file(
+        path: string,
+        contents: string
+    ): void;
+
     static path_exists(
         path: string
     ): boolean;
