@@ -1,6 +1,6 @@
 declare class XMLHttpRequest {
   readonly status: number;
-  readonly timeout: number;
+  timeout: number;
   readonly statusText: string;
   readonly responseText: string;
   readonly readyState: number;
