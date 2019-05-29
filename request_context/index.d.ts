@@ -147,18 +147,6 @@ declare class RequestContext {
     ): void;
 
     /**
-     * Attempts to resolve |origin| to a list of associated IP addresses using
-     * cached data.
-     * @param resolved_ips Will be populated with the list of resolved IP
-     * addresses.
-     * @returns ERR_NONE on success.
-     */
-    resolve_host_cached(
-        origin: string,
-        resolved_ips: StringList
-    ): CefErrorCode;
-
-    /**
      * Load an extension.
      *
      * If extension resources will be read from disk using the default load

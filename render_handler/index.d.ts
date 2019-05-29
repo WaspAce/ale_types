@@ -113,6 +113,18 @@ declare class RenderHandler {
     ) => boolean;
 
     /**
+     * Called when an on-screen keyboard should be shown or hidden for the
+     * specified |browser|. |input_mode| specifies what kind of keyboard should be
+     * opened. If |input_mode| is [[TextInputMode]].CEF_TEXT_INPUT_MODE_NONE, any existing keyboard
+     * for this browser should be hidden.
+     */
+    on_virtual_keyboard_requested:
+    (
+        browser: Browser,
+        input_mode: TextInputMode
+    ) => void;
+
+    /**
      * Add direct targets to draw images on.
      */
     add_draw_targets(

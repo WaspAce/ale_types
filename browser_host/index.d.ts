@@ -43,6 +43,11 @@ declare class BrowserHost {
     frame_rate: number;
 
     /**
+     * Whether the browser's audio is muted.
+     */
+    audio_muted: boolean;
+
+    /**
      * The current visible navigation entry for this browser.
      */
     readonly visible_navigation_entry: NavigationEntry;
@@ -241,6 +246,13 @@ declare class BrowserHost {
         event: MouseEvent,
         delta_x: number,
         delta_y: number
+    ): void;
+
+    /**
+     * Send a touch event to the browser.
+     */
+    send_touch_event(
+        event: TouchEvent
     ): void;
 
     /**

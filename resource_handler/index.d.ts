@@ -37,7 +37,12 @@ declare class ResourceHandler {
    * optional header values. If an error occured while setting up the request you can call set_error()
    * on |response| to indicate the error condition.
    * @param redirect_url To redirect the request to a new URL set |redirect_url| to the new
-   * URL.
+   * URL. |redirect_url| can be either a relative or fully qualified URL. It is
+	 * also possible to set |response| to a redirect http status code and pass the
+	 * new URL via a Location header. Likewise with |redirect_url| it is valid to
+	 * set a relative or fully qualified URL as the Location header value. If an
+	 * error occured while setting up the request you can call set_error() on
+	 * |response| to indicate theTextInputMode error condition.
    */
   (
     response: Response
