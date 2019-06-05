@@ -7,6 +7,15 @@ declare class GuiTabs extends GuiControl {
   active_tab_index: number;
 
   /**
+   * @param parent The parent control which will contain this control.
+   * @param delegate Object, on whose behalf (this) events will be triggered.
+   */
+  constructor(
+    parent: GuiControl,
+    delegate?: object
+  );
+
+  /**
    * Adds new tab.
    * @param index Index of tab or -1 to append to end.
    * @param caption Caption of new tab.
