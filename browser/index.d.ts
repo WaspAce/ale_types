@@ -97,7 +97,7 @@ declare class Browser {
   /**
    * @returns the identifiers of all existing frames.
    */
-  get_frame_identifiers(): Frame[];
+  get_frame_identifiers(): number[];
 
   /**
    * Returns the names of all existing frames into **names**.
