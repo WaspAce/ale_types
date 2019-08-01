@@ -73,8 +73,8 @@ declare class CookieManager {
      * or if cookies cannot be accessed.
      */
     delete_cookies(
-        url: string,
-        cookie_name: string,
+        url?: string,
+        cookie_name?: string,
         callback?: DeleteCookiesCallback
     ): boolean;
 
