@@ -83,4 +83,11 @@ declare class system {
   static string_of(
     bytes: number[]
   ): string;
+
+  /**
+   * Convert Pascal TDateTime (float) to JS Date
+   */
+  static pascal_time_to_js_date(
+    pascal_time: number
+  ): Date;
 }
