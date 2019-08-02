@@ -87,7 +87,14 @@ declare class system {
   /**
    * Convert Pascal TDateTime (float) to JS Date
    */
-  static pascal_time_to_js_date(
+  static pascal_to_js_date(
     pascal_time: number
   ): Date;
+
+  /**
+   * Convert JS Date to Pascal TDateTime (float)
+   */
+  static js_date_to_pascal(
+    js_date: Date
+  ): number;
 }
