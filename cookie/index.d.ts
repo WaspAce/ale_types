@@ -8,7 +8,7 @@ declare class Cookie {
     name: string;
 
     /**
-     * The cookie name.
+     * The cookie value.
      */
     value: string;
 
