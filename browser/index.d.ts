@@ -105,15 +105,6 @@ declare class Browser {
   get_frame_names(names: StringList): void;
 
   /**
-   * Send a message to the specified |target_process|.
-   * @returns Returns true if the message was sent successfully.
-   */
-  send_process_message(
-    target_process: ProcessId,
-    message: ProcessMessage
-  ): boolean;
-
-  /**
    * @returns Returns the main (top-level) frame for the browser window.
    */
   get_main_frame(): Frame;

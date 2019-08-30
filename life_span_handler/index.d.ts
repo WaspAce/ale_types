@@ -35,6 +35,9 @@ declare class LifeSpanHandler {
      * @param settings Will default to the source browser's values.
      * @param no_javascript_access If value is set to false the new browser will not be scriptable and may not be
      * hosted in the same renderer process as the source browser.
+     * @param |extra_info| parameter provides an opportunity to specify extra information
+     * specific to the created popup browser that will be passed to
+     * [[RenderProcessHandler]].on_browser_created() in the render process.
      */
     (
         browser: Browser,
@@ -49,7 +52,8 @@ declare class LifeSpanHandler {
     ) => {
         allow: boolean,
         client: BrowserClient,
-        no_javascript_access: boolean
+        no_javascript_access: boolean,
+        extra_info: DictionaryValue
     };
 
     /**
@@ -153,8 +157,13 @@ declare class LifeSpanHandler {
     on_before_close:
     /**
      * Release all references to the browser object and do not attempt to
-     * execute any functions on the browser object after this callback returns.
+     * execute any functions on the browser object (other than get_identifier or is_same)
+     * after this callback returns.
      * This callback will be the last notification that references |browser|.
+     * Any in-progress network requests associated with |browser|
+     * will be aborted when the browser is destroyed, and
+     * [[ResourceRequestHandler]] callbacks related to those requests may
+     * still arrive after this function is called.
      * See on_close() documentation for additional usage information.
      */
     (

@@ -47,8 +47,13 @@ declare class RenderProcessHandler {
    * @event
    */
   on_browser_created:
+  /**
+   * |extra_info| is a read-only value originating from
+   * [[Browser]] or [[LifeSpanHandler]].on_before_popup()
+   */
   (
-    browser: Browser
+    browser: Browser,
+    extra_info: DictionaryValue
   ) => void;
 
   /**
@@ -99,6 +104,7 @@ declare class RenderProcessHandler {
    */
   (
     browser: Browser,
+    frame, Frame,
     source_process: ProcessId,
     message: ProcessMessage
   ) => boolean;

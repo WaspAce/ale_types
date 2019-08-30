@@ -36,12 +36,12 @@ declare class RequestContext {
     get_handler(): RequestContextHandler | null;
 
     /**
-     * @returns the default cookie manager for this object. This will be the global
-     * cookie manager if this object is the global request context. Otherwise,
-     * this will be the default cookie manager used when this request context does
-     * not receive a value via [[RequestContextHandler]].get_cookie_manager().
+     * Returns the cookie manager for this object. If |callback| is non-NULL it
+     * will be executed asnychronously after the manager's storage has been initialized.
      */
-    get_default_cookie_manager(): CookieManager;
+    get_cookie_manager(
+      callback: CompletionCallback
+    ): CookieManager;
 
     /**
      * Register a scheme handler factory for the specified |scheme_name| and
@@ -127,6 +127,15 @@ declare class RequestContext {
         name: string,
         value: Value
     ): string;
+
+    /**
+		 * Clears all HTTP authentication credentials that were added as part of
+		 * handling on_get_auth_credentials. If |callback| is non-NULL it will be executed 
+     * after completion.
+		 */
+		clear_http_auth_credentials(
+      callback: CompletionCallback
+    ): void;
 
     /**
      * Clears all active and idle connections that Chromium currently has. This is

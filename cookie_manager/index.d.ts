@@ -3,23 +3,17 @@
  */
 declare class CookieManager {
     /**
-     * 
-     * @param persist_session_cookies Set to **true** to persist session cookies (cookies without
-     * an expiry date or validity interval). Session cookies are generally intended to be transient
-     * and most Web browsers do not persist them.
-     */
-    constructor(
-        persist_session_cookies: boolean
-    )
-
-    /**
-     * Set the schemes supported by this manager. The default **schemes** ("http",
-     * "https", "ws" and "wss") will always be supported. Must be called before any cookies are accessed.
-     * @param callback If any it will be executed asnychronously on the IO thread after the change
-     * has been applied.
+     * Set the schemes supported by this manager. If |include_defaults| is true
+	 * (1) the default schemes ("http", "https", "ws" and "wss") will also be
+	 * supported. Calling this function with an NULL |schemes| value and
+	 * |include_defaults| set to false (0) will disable all loading and saving of
+	 * cookies for this manager. If |callback| is non-NULL it will be executed
+	 * asnychronously after the change has been applied. Must be
+	 * called before any cookies are accessed.
      */
     set_supported_schemes(
         schemes: StringList,
+        include_defaults: boolean,
         callback?: CompletionCallback
     ): void;
 
@@ -76,15 +70,5 @@ declare class CookieManager {
         url?: string,
         cookie_name?: string,
         callback?: DeleteCookiesCallback
-    ): boolean;
-
-    /**
-     * To persist session cookies (cookies without an expiry date or validity interval)
-     * set **persist_session_cookies** to true. Session cookies are generally intended
-     * to be transient and most Web browsers do not persist them.
-     * @returns **false** if cookies cannot be accessed.
-     */
-    set_persist_session_cookies(
-        persist_session_cookies: boolean
     ): boolean;
 }

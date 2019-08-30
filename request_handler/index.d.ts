@@ -7,7 +7,7 @@ declare class RequestHandler {
      * @param delegate Object, on whose behalf (this) events will be triggered.
      */
     constructor(
-        delegate?: object
+      delegate?: object
     );
 
     /**
@@ -28,11 +28,11 @@ declare class RequestHandler {
      * it navigated automatically (e.g. via the DomContentLoaded event).
      */
     (
-        browser: Browser,
-        frame: Frame,
-        request: Request,
-        user_gesture: boolean,
-        is_redirect: boolean
+      browser: Browser,
+      frame: Frame,
+      request: Request,
+      user_gesture: boolean,
+      is_redirect: boolean
     ) => boolean;
 
     /**
@@ -57,178 +57,70 @@ declare class RequestHandler {
      * proceed in the source browser's top-level frame.
      */
     (
-        browser: Browser,
-        frame: Frame,
-        target_url: string,
-        target_disposition: WindowOpenDisposition,
-        user_gesture: boolean
+      browser: Browser,
+      frame: Frame,
+      target_url: string,
+      target_disposition: WindowOpenDisposition,
+      user_gesture: boolean
     ) => boolean;
 
     /**
-     * Called before a resource request is loaded.
-     * @event
+     * Called before a resource request is initiated.
      */
-    on_before_resource_load:
+    on_get_resource_request_handler:
     /**
-     * @param request Object may be modified.
-     * @returns Return true to continue the request or false to cancel the request.
+     * The |browser| and |frame| values represent the source of the
+     * request. |request| represents the request contents and cannot be modified
+     * in this callback. |is_navigation| will be true (1) if the resource request
+     * is a navigation. |is_download| will be true (1) if the resource request is
+     * a download. |request_initiator| is the origin (scheme + domain) of the page
+     * that initiated the request. Set |disable_default_handling| to true (1) to
+     * disable default handling of the request, in which case it will need to be
+     * handled via [[ResourceRequestHandler]].on_get_resource_handler or it will
+     * be canceled. To allow the resource load to proceed with default handling
+     * return handler as NULL. To specify a handler for the resource return handler as a
+     * [[ResourceRequestHandler]] object. If this callback returns NULL the
+     * same function will be called on the associated cef_request_tContextHandler,
+     * if any.
      */
     (
-        browser: Browser,
-        frame: Frame,
-        request: Request
-    ) => boolean;
-
-    /**
-     * Called before a resource is loaded.
-     * @event
-     */
-    on_get_resource_handler:
-    /**
-     * @return To allow the resource to load normally return null. To specify a handler for the resource return
-     * a [[ResourceHandler]] object.
-     * @param request Object should not be modified in this callback.
-     */
-    (
-        browser: Browser,
-        frame: Frame,
-        request: Request
-    ) => ResourceHandler | null;
-
-    /**
-     * Called when a resource load is redirected.
-     * @event
-     */
-    on_resource_redirect:
-    /**
-     * @param request Parameter will contain the old URL and other request-related information.
-     * @param response Parameter will contain the response that resulted in the
-     * redirect.
-     * @return Return the new URL if desired.
-     * @param request Object cannot be modified in this callback.
-     */
-    (
-        browser: Browser,
-        frame: Frame,
-        request: Request,
-        response: Response
-    ) => string;
-
-    /**
-     * Called when a resource response is received.
-     * @event
-     */
-    on_resource_response:
-    /**
-     * @return To allow the resource to load normally return false. To redirect or retry the
-     * resource modify |request| (url, headers or post body) and return true.
-     * @param response Object cannot be modified in this callback.
-     */
-    (
-        browser: Browser,
-        frame: Frame,
-        request: Request,
-        response: Response
-    ) => boolean;
-
-    /**
-     * Called to optionally filter resource response content.
-     * @event
-     */
-    on_get_resource_response_filter: 
-    /**
-     * |request| and |response| represent the request and response respectively
-     * and cannot be modified in this callback.
-     */
-    (
-        browser: Browser,
-        frame: Frame,
-        request: Request,
-        response: Response
-    ) => ResponseFilter;
-
-    /**
-     * Called when a resource load has completed.
-     * @event
-     */
-    on_resource_load_complete:
-    /**
-     * |request| and |response| represent the request and response respectively and cannot be
-     * modified in this callback.
-     * @param status Indicates the load completion status.
-     * @return Number of response bytes actually read.
-     */
-    (
-        browser: Browser,
-        frame: Frame,
-        request: Request,
-        response: Response,
-        status: UrlRequestStatus,
-        received_content_length: number
-    ) => number;
+      browser: Browser,
+      frame: Frame,
+      request: Request,
+      is_navigation: boolean,
+      is_download: boolean,
+      request_initiator: string
+    ) => {
+      disable_default_handling: boolean,
+      handler: ResourceRequestHandler
+    };
 
     /**
      * Called when the browser needs credentials from the user.
      * @event
-     */
+		 */
     on_get_auth_credentials:
     /**
-     * @param is_proxy Indicates whether the host is a proxy server.
-     * @param host Contains the hostname.
-     * @param port Contains the port number.
-     * @param realm The realm of the challenge and may be empty.
-     * @param scheme The authentication scheme used, such as "basic" or "digest",
-     * and will be empty if the source of the request is an FTP server.
-     * @return Return true to continue the request and call
-     * [[AuthCallback]].cont() either in this function or at a later time when
-     * the authentication information is available. Return false to cancel the
-     * request immediately.
+     * |origin_url| is the origin making this authentication request. |is_proxy|
+		 * indicates whether the host is a proxy server. |host| contains the hostname
+		 * and |port| contains the port number. |realm| is the realm of the challenge
+		 * and may be NULL. |scheme| is the authentication scheme used, such as
+		 * "basic" or "digest", and will be NULL if the source of the request is an
+		 * FTP server. Return true (1) to continue the request and call
+		 * |callback|.cont() either in this function or at a later time when
+		 * the authentication information is available. Return false (0) to cancel the
+		 * request immediately.
      */
     (
-        browser: Browser,
-        frame: Frame,
-        is_proxy: boolean,
-        host: string,
-        port: string,
-        realm: string,
-        scheme: string,
-        callback: AuthCallback
+      browser: Browser,
+      origin_url: string,
+      is_proxy: boolean,
+      host: string,
+      port: string,
+      realm: string,
+      scheme: string,
+      callback: AuthCallback
     ) => boolean;
-
-    /**
-     * Called before sending a network request with a "Cookie"
-     * request header.
-     * @event
-     */
-    on_can_get_cookies: 
-    /**
-     * @return Return true to allow cookies to be included in the
-     * network request or false to block cookies.
-     * @param request Object should not be modified in this callback.
-     */
-    (
-        browser: Browser,
-        frame: Frame,
-        request: Request
-    ) => boolean;
-
-    /**
-     * Called when receiving a network request with a "Set-Cookie" response
-     * header value represented by |cookie|.
-     * @event
-     */
-    on_can_set_cookie:
-    /**
-     * @return Return true to allow the cookie to be stored or false to block the cookie.
-     * @param request Object should not be modified in this callback.
-     */
-    (
-        browser: Browser,
-        frame: Frame,
-        request: Request,
-        cookie: Cookie
-    ) => boolean;
-
 
     /**
      * Called when JavaScript requests a specific storage quota
@@ -245,10 +137,10 @@ declare class RequestHandler {
      * grant or deny the request. Return false to cancel the request.
      */
     (
-        browser: Browser,
-        origin_url: string,
-        new_size: number,
-        callback: Callback
+      browser: Browser,
+      origin_url: string,
+      new_size: number,
+      callback: Callback
     ) => boolean;
     
     /**
@@ -260,8 +152,8 @@ declare class RequestHandler {
      * @param plugin_path The path of the plugin that crashed.
      */
     (
-        browser: Browser,
-        plugin_path: string
+      browser: Browser,
+      plugin_path: string
     ) => void;
 
     /**
@@ -271,7 +163,7 @@ declare class RequestHandler {
      */
     on_render_view_ready:
     (
-        browser: Browser
+      browser: Browser
     ) => void;
 
     /**
@@ -283,7 +175,7 @@ declare class RequestHandler {
      * @param status Indicates how the process terminated.
      */
     (
-        browser: Browser,
-        status: TerminationStatus
+      browser: Browser,
+      status: TerminationStatus
     ) => void;
 }

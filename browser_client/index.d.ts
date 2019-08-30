@@ -64,6 +64,7 @@ declare class BrowserClient {
      */
     on_process_message_received: (
         browser: Browser,
+        frame: Frame,
         source_process: ProcessId,
         message: ProcessMessage
     ) => void;

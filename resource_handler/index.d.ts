@@ -8,20 +8,24 @@ declare class ResourceHandler {
   );
 
   /**
-   * Begin processing the request.
+   * Open the response stream.
    * @event
    */
-  on_process_request:
+  on_open:
   /**
-   * @return To handle the request return true and call [[Callback]].cont()
-   * once the response header information is available ([[Callback]].cont()
-   * can also be called from inside this function if header information is available immediately).
-   * To cancel the request return false.
+   * @return To handle the request immediately set
+   * |handle_request| to true (1) and |immediately| to true (1).
+   * To decide at a later time set |handle_request| to false (0), |immediately| to true (1),
+   * and execute |callback| to continue or cancel the request.
+   * To cancel the request immediately set |handle_request| to true (1) and |immediately| to false (0).
    */
   (
     request: Request,
     callback: Callback
-  ) => boolean;
+  ) => {
+    handle_request: boolean,
+    immediately: boolean
+  };
 
   /**
    * Retrieve response header information.
@@ -42,7 +46,7 @@ declare class ResourceHandler {
 	 * new URL via a Location header. Likewise with |redirect_url| it is valid to
 	 * set a relative or fully qualified URL as the Location header value. If an
 	 * error occured while setting up the request you can call set_error() on
-	 * |response| to indicate theTextInputMode error condition.
+	 * |response| to indicate the error condition.
    */
   (
     response: Response
@@ -52,51 +56,49 @@ declare class ResourceHandler {
   };
 
   /**
-   * Read response data.
+   * * Skip response data when requested by a Range header.
    * @event
    */
-  on_read_response:
+  on_skip:
   /**
-   * If data is available immediately copy up to |bytes_to_read| bytes
-   * into |data_out|, set |bytes_read| to the number of bytes copied,
-   * and return true. To read the data at a later time set
-   * |bytes_read| to 0, return true and call [[Callback]].cont() when the
-   * data is available. To indicate response completion return false.
+   * Skip over and discard |bytes_to_skip| bytes of response data.
+   * If data is available immediately set |bytes_skipped| to the number of bytes skipped
+   * and |immediately| to true (1). To read the data at a later time set |bytes_skipped| to 0,
+   * |immediately| to true (1) and execute |callback| when the data is available. To indicate failure set
+   * |bytes_skipped| to < 0 (e.g. -2 for ERR_FAILED) and |immediately| to false (0).
    */
   (
-    bytes_to_read: number,
-    callback: Callback
+    bytes_to_skip: number,
+    callback: ResourceSkipCallback
   ) => {
-    data_out: number[],
-    bytes_read: number,
-    result: boolean
+    bytes_skipped: number,
+    immediately: boolean
   };
 
   /**
-   * 
+   * Read response data.
    * @event
    */
-  on_can_get_cookie:
+  on_read:
   /**
-   * Return true if the specified cookie can be sent with the request or
-   * false otherwise. If false is returned for any cookie then no
-   * cookies will be sent with the request.
+   * If data is available immediately copy up to
+   * |bytes_to_read| bytes into |data_out|, set |bytes_read| to the number of
+   * bytes copied, and set |immediately| to true (1).
+   * To read the data at a later time keep a reference to |data_out|,
+   * set |bytes_read| to 0, return true (1) and execute |callback| when the data is available
+   * (|data_out| will remain valid until the callback is executed).
+   * To indicate response completion set |bytes_read| to 0 and set |immediately| to false (0).
+   * To indicate failure set |bytes_read| to < 0 (e.g. -2 for ERR_FAILED) and set |immediately|
+   * to false (0).
    */
   (
-    cookie: Cookie
-  ) => void;
-
-  /**
-   * @event
-   */
-  on_can_set_cookie: 
-  /**
-   * Return true if the specified cookie returned with the response can be
-   * set or false otherwise.
-   */
-  (
-    cookie: Cookie
-  ) => void;
+    bytes_to_read: number,
+    callback: ResourceReadCallback
+  ) => {
+    data_out: number[],
+    bytes_read: number,
+    immediately: boolean
+  };
 
   /**
    * Request processing has been canceled.

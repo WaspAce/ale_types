@@ -43,7 +43,7 @@ declare class BrowserHost {
     frame_rate: number;
 
     /**
-     * Whether the browser's audio is muted.
+     * Set to **true** to mute audio.
      */
     audio_muted: boolean;
 

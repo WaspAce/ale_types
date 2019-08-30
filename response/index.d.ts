@@ -27,6 +27,11 @@ declare class Response {
     mime_type: string;
 
     /**
+     * The response charset.
+     */
+    charset: string;
+
+    /**
      * The resolved URL after redirects or changed as a result of HSTS
      */
     url: string;
