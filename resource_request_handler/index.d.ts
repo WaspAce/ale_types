@@ -37,17 +37,14 @@ declare class ResourceRequestHandler {
    * The |browser| and |frame| values represent the source of the request,
    * and may be NULL for requests originating from service workers or [[UrlRequest]].
    * To redirect or change the resource load optionally modify |request|. Modification of
-   * the request URL will be treated as a redirect. Return RV_CONTINUE to
-   * continue the request immediately. Return RV_CONTINUE_ASYNC and call
-   * [[RequestCallback]].cont() at a later time to continue or cancel the
-   * request asynchronously. Return RV_CANCEL to cancel the request immediately.
+   * the request URL will be treated as a redirect.
+   * Return true to continue the request or false to cancel the request.
    */
   (
     browser: Browser,
     frame: Frame,
-    request: Request,
-    callback: RequestCallback
-  ) => ReturnValue;
+    request: Request
+  ) => boolean;
 
   /**
    * Called before a resource is loaded.
