@@ -53,7 +53,7 @@ declare class LifeSpanHandler {
         allow: boolean,
         client: BrowserClient,
         no_javascript_access: boolean,
-        extra_info: DictionaryValue
+        extra_info?: DictionaryValue
     };
 
     /**
