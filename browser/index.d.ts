@@ -9,6 +9,7 @@ declare class Browser {
     client: BrowserClient,
     url: string,
     settings: BrowserSettings,
+    extra_info?: DictionaryValue,
     request_context?: RequestContext
   )
 
