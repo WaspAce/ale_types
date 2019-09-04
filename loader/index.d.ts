@@ -20,7 +20,7 @@ declare class loader {
 
     static save_to_file(
         path: string,
-        contents: string
+        contents: string | number[]
     ): void;
 
     static path_exists(
