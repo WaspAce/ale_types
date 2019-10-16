@@ -48,4 +48,10 @@ declare class GuiForm extends GuiControl {
    * @event
    */
   on_hide: () => void;
+
+  /**
+   * Called when form needs to be repainted.
+   * @event
+   */
+  on_paint: () => void;
 }
