@@ -38,14 +38,14 @@ declare class GuiForm extends GuiControl {
   ) => void;
 
   /**
-   * Called when activated.
+   * Called when show.
    * @event
    */
-  on_activate:() => void;
+  on_show:() => void;
 
   /**
-   * Called when deactivated.
+   * Called when hide.
    * @event
    */
-  on_deactivate: () => void;
+  on_hide: () => void;
 }
