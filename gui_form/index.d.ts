@@ -36,4 +36,16 @@ declare class GuiForm extends GuiControl {
   (
     window_state: WindowState
   ) => void;
+
+  /**
+   * Called when activated.
+   * @event
+   */
+  on_activate:() => void;
+
+  /**
+   * Called when deactivated.
+   * @event
+   */
+  on_deactivate: () => void;
 }
