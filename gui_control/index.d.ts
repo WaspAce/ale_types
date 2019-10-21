@@ -55,6 +55,12 @@ declare abstract class GuiControl {
     ): Point;
 
     /**
+     * Called when control is ready.
+     * @event
+     */
+    on_ready:() => void;
+
+    /**
      * Called when control resized.
      * @event
      */

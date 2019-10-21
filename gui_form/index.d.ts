@@ -36,4 +36,22 @@ declare class GuiForm extends GuiControl {
   (
     window_state: WindowState
   ) => void;
+
+  /**
+   * Called when show.
+   * @event
+   */
+  on_show:() => void;
+
+  /**
+   * Called when hide.
+   * @event
+   */
+  on_hide: () => void;
+
+  /**
+   * Called when form needs to be repainted.
+   * @event
+   */
+  on_paint: () => void;
 }

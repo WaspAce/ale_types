@@ -106,10 +106,7 @@ declare class RequestHandler {
 		 * and |port| contains the port number. |realm| is the realm of the challenge
 		 * and may be NULL. |scheme| is the authentication scheme used, such as
 		 * "basic" or "digest", and will be NULL if the source of the request is an
-		 * FTP server. Return true (1) to continue the request and call
-		 * |callback|.cont() either in this function or at a later time when
-		 * the authentication information is available. Return false (0) to cancel the
-		 * request immediately.
+		 * FTP server.
      */
     (
       browser: Browser,
@@ -118,9 +115,11 @@ declare class RequestHandler {
       host: string,
       port: string,
       realm: string,
-      scheme: string,
-      callback: AuthCallback
-    ) => boolean;
+      scheme: string
+    ) => {
+      username: string;
+      password: string;
+    };
 
     /**
      * Called when JavaScript requests a specific storage quota
