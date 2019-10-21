@@ -48,7 +48,7 @@ declare class system {
    */
   static exit(
     exit_code?: number,
-    exit_message?: string
+    exit_message?: any
   ): void;
 
   /**
