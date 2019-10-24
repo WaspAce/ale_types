@@ -104,7 +104,7 @@ declare class RenderProcessHandler {
    */
   (
     browser: Browser,
-    frame, Frame,
+    frame: Frame,
     source_process: ProcessId,
     message: ProcessMessage
   ) => boolean;
