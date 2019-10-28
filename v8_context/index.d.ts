@@ -1,3 +1,9 @@
+declare interface V8ContextEvalResult {
+  result: boolean
+  ret_val: V8Value,
+  exception: V8Exception
+}
+
 /**
  * Structure representing a V8 context handle.
  */
@@ -45,11 +51,7 @@ declare class V8Context {
     code: string,
     script_url: string,
     start_line: number
-  ): {
-    result: boolean
-    ret_val: V8Value,
-    exception: V8Exception
-  }
+  ): V8ContextEvalResult;
 
   /**
    * Create a new [[V8Value]] object of type undefined.

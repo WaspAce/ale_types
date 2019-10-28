@@ -1,4 +1,16 @@
 /**
+ * @param cookie Do not use cookie outside this callback.
+ * @param count The 0-based index for the current cookie.
+ * @param total The total number of cookies.
+ * @return **true** to delete the cookie currently being visited.
+ */
+declare type CookieVisitorOnVisit = (
+    cookie: Cookie,
+    count: number,
+    total: number
+) => boolean;
+
+/**
  * 
  */
 declare class CookieVisitor {
@@ -15,16 +27,5 @@ declare class CookieVisitor {
      * called if no cookies are found.
      * @event
      */
-    on_visit:
-    /**
-     * @param cookie Do not use cookie outside this callback.
-     * @param count The 0-based index for the current cookie.
-     * @param total The total number of cookies.
-     * @return **true** to delete the cookie currently being visited.
-     */
-    (
-        cookie: Cookie,
-        count: number,
-        total: number
-    ) => boolean;
+    on_visit: CookieVisitorOnVisit;
 }

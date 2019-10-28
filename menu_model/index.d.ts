@@ -1,3 +1,15 @@
+declare interface MenuModelAccelerator {
+    key_code: number,
+    shift_pressed: boolean,
+    ctrl_pressed: boolean,
+    alt_pressed: boolean
+}
+
+declare interface MenuModelColor {
+    color_type: MenuColorType,
+    color: string
+}
+
 declare class MenuModel {
     readonly is_sub_menu: boolean;
     readonly count: number;
@@ -213,21 +225,11 @@ declare class MenuModel {
 
     get_accelerator(
         command_id: MenuId
-    ): {
-        key_code: number,
-        shift_pressed: boolean,
-        ctrl_pressed: boolean,
-        alt_pressed: boolean
-    };
+    ): MenuModelAccelerator;
 
     get_accelerator_at(
         index: number
-    ): {
-        key_code: number,
-        shift_pressed: boolean,
-        ctrl_pressed: boolean,
-        alt_pressed: boolean
-    };
+    ): MenuModelAccelerator;
 
     set_color(
         command_id: MenuId,
@@ -243,17 +245,11 @@ declare class MenuModel {
 
     get_color(
         command_id: MenuId
-    ): {
-        color_type: MenuColorType,
-        color: string
-    };
+    ): MenuModelColor;
 
     get_color_at(
         index: number
-    ): {
-        color_type: MenuColorType,
-        color: string
-    };
+    ): MenuModelColor;
 
     set_font_list(
         command_id: MenuId,

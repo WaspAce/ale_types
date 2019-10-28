@@ -1,3 +1,5 @@
+declare type CefAppOnContextInitialized = () => void;
+
 declare class CEF_APP {
 
   /**
@@ -103,5 +105,5 @@ declare class CEF_APP {
    * Called after the CEF context has been initialized.
    * @event
    */
-  static on_context_initialized: () => void;
+  static on_context_initialized: CefAppOnContextInitialized;
 }

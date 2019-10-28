@@ -1,3 +1,10 @@
+declare type BrowserClientOnProcessMessageReceived = (
+    browser: Browser,
+    frame: Frame,
+    source_process: ProcessId,
+    message: ProcessMessage
+) => void;
+
 /**
  * Implement this structure to provide handler implementations.
  */
@@ -62,11 +69,6 @@ declare class BrowserClient {
      * Do not use |message| object outside this function.
      * @event
      */
-    on_process_message_received: (
-        browser: Browser,
-        frame: Frame,
-        source_process: ProcessId,
-        message: ProcessMessage
-    ) => void;
+    on_process_message_received: BrowserClientOnProcessMessageReceived;
 
 }

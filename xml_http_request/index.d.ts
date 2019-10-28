@@ -1,3 +1,5 @@
+declare type XMLHttpRequestNotifyEvent = () => void;
+
 declare class XMLHttpRequest {
   readonly status: number;
   timeout: number;
@@ -38,10 +40,10 @@ declare class XMLHttpRequest {
     key: string
   );
   
-  onreadystatechange: () => void;
-  ontimeout: () => void;
-  onerror: () => void;
-  onload: () => void;
-  onloadend: () => void;
-  onloadstart: () => void;
+  onreadystatechange: XMLHttpRequestNotifyEvent;
+  ontimeout: XMLHttpRequestNotifyEvent;
+  onerror: XMLHttpRequestNotifyEvent;
+  onload: XMLHttpRequestNotifyEvent;
+  onloadend: XMLHttpRequestNotifyEvent;
+  onloadstart: XMLHttpRequestNotifyEvent;
 }

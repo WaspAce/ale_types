@@ -1,3 +1,9 @@
+declare type ResponseFilterOnInitFilter = () => boolean;
+
+declare type ResponseFilterOnFilter = (
+  //TODO
+) => ResponseFilterStatus
+
 /**
  * Class to filter resource response content.
  */
@@ -15,13 +21,10 @@ declare class ResponseFilter {
    * The filter will not be installed if this function returns false.
    * @event
    */
-  on_init_filter: () => boolean;
+  on_init_filter: ResponseFilterOnInitFilter;
 
   /**
    * @event
    */
-  on_filter:
-  (
-    //TODO
-  ) => ResponseFilterStatus
+  on_filter: ResponseFilterOnFilter;
 }

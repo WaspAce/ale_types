@@ -1,5 +1,5 @@
 declare class MySql {
-    constructor(object: {
+    constructor(options: {
         readonly host: string,
         readonly port: number,
         readonly user: string,

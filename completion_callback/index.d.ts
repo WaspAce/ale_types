@@ -1,3 +1,5 @@
+declare type CompletionCallbackOnComplete = () => void;
+
 /**
  * Generic callback class used for asynchronous completion.
  */
@@ -12,5 +14,5 @@ declare class CompletionCallback {
      * Will be called once the task is complete.
      * @event
      */
-    on_complete: () => void;
+    on_complete: CompletionCallbackOnComplete;
 }

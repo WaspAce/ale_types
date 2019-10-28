@@ -1,3 +1,23 @@
+declare interface GuiTabsOnTabCloseResult {
+  can_close: boolean;
+  can_continue: boolean;
+}
+
+declare type GuiTabsOnTabClose = (
+  tab_index,
+  can_close,
+  can_continue
+) => GuiTabsOnTabCloseResult;
+
+declare type GuiTabsOnTabMove = (
+  idx_from: number,
+  idx_to: number
+) => void;
+
+declare type GuiTabsOnTabClick = () => void;
+
+declare type GuiTabsOnTabPlusClick = () => void;
+
 declare class GuiTabs extends GuiControl {
   /**
    * Tab count.
@@ -45,34 +65,22 @@ declare class GuiTabs extends GuiControl {
   /**
    * Called when "x" mark clicked.
    */
-  on_tab_close:
-  (
-    tab_index,
-    can_close,
-    can_continue
-  ) => {
-    can_close: boolean,
-    can_continue: boolean
-  };
+  on_tab_close: GuiTabsOnTabClose;
 
   /**
    * Called after adding/deleting/moving tabs. Passed 2 indexes:
    * @param idx_from Will be -1 if tab added.
    * @param idx_to Will be -1 if tab deleted.
    */
-  on_tab_move:
-  (
-    idx_from: number,
-    idx_to: number
-  ) => void;
+  on_tab_move: GuiTabsOnTabMove;
 
   /**
    * Called when tab activates (by click or code).
    */
-  on_tab_click: () => void;
+  on_tab_click: GuiTabsOnTabClick;
 
   /**
    * Called when "plus" pseudo-tab or "plus" button clicked.
    */
-  on_tab_plus_click: () => void;
+  on_tab_plus_click: GuiTabsOnTabPlusClick;
 }
