@@ -133,7 +133,13 @@ declare class Frame {
     /**
      * @returns The browser that this frame belongs to.
      */
-    get_browser(): Browser
+    get_browser(): Browser;
+
+    /**
+     * Get the V8 context associated with the frame. This function can only be
+     * called from the render process.                                        
+     */
+    get_v8_context(): V8Context;
 
     /**
      * Create a new URL request that will be treated as originating from this
