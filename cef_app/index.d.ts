@@ -15,11 +15,6 @@ declare class CEF_APP {
   /**
    * 
    */
-  static external_message_pump: boolean;
-
-  /**
-   * 
-   */
   static readonly initialized: boolean;
 
   /**
