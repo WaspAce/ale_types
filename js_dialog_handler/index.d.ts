@@ -43,13 +43,11 @@ declare type JsDialogHandlerOnResetDialogState = (
  */
 declare class JsDialogHandler {
   /**
-   * 
    * @param delegate Object, on whose behalf (this) events will be triggered.
    */
   constructor(
     delegate?: object
   );
-
 
   /**
    * Called to run a JavaScript dialog.

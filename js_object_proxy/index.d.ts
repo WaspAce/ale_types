@@ -30,6 +30,13 @@ declare type JSObjectProxyOnCallMethod = (
  */
 declare class JSObjectProxy {
   /**
+   * @param delegate Object, on whose behalf (this) events will be triggered.
+   */
+  constructor(
+    delegate?: object
+  );
+
+  /**
    * Called when JS gets property |name|.
    * @event
    */
