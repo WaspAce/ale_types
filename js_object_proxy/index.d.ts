@@ -40,41 +40,41 @@ declare class JSObjectProxy {
    * Called when JS gets property |name|.
    * @event
    */
-  on_get_property: JSObjectProxyOnGetProperty;
+  get_property: JSObjectProxyOnGetProperty;
 
   /**
    * Called when JS sets property |name|.
    * @event
    */
-  on_set_property: JSObjectProxyOnSetProperty;
+  set_property: JSObjectProxyOnSetProperty;
 
   /**
    * Called when JS adds property |name|.
    * @event
    */
-  on_add_property: JSObjectProxyOnAddProperty;
+  add_property: JSObjectProxyOnAddProperty;
 
   /**
    * Called when JS deletes property |name|.
    * @event
    */
-  on_delete_property: JSObjectProxyOnDeleteProperty;
+  delete_property: JSObjectProxyOnDeleteProperty;
 
   /**
    * Called when JS enumerates object.
    * @event
    */
-  on_enumerate: JSObjectProxyOnEnumerate;
+  enumerate: JSObjectProxyOnEnumerate;
 
   /**
    * Called when JS finalizes object.
    * @event
    */
-  on_finalize: JSObjectProxyOnFinalize;
+  finalize: JSObjectProxyOnFinalize;
 
   /**
    * Called when JS calls function |name|.
    * @event
    */
-  on_call_method: JSObjectProxyOnCallMethod;
+  call_method: JSObjectProxyOnCallMethod;
 }
