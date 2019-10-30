@@ -34,9 +34,7 @@ declare type RenderProcessHandlerOnContextCreated = (
 * No references to the context should be kept after this function is called.
 */
 declare type RenderProcessHandlerOnContextReleased = (
-  browser: Browser,
-  frame: Frame,
-  context: V8Context
+  frame_id: number
 ) => void;
 
 declare type RenderProcessHandlerOnProcessMessageReceived = (
