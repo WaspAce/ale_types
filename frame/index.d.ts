@@ -176,6 +176,7 @@ declare class Frame {
      */
     send_process_message(
         target_process: ProcessId,
-        message: ProcessMessage
+        message: ProcessMessage,
+        sync?: boolean
     ): void;
 }
