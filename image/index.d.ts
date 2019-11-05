@@ -23,6 +23,24 @@ declare class Image {
   ): void;
 
   /**
+   * Get value of pixel at coordinates;
+   */
+  get_pixel(
+    x: number,
+    y: number
+  ): string;
+
+  /**
+   * Sets the pixel by replacing the content at (|x|, |y|) with the specified color.
+   * Alpha value is set to 255 (opaque)
+   */
+  set_pixel(
+    x: number,
+    y: number,
+    color: string
+  ): void;
+
+  /**
    * 
    * Save this image to specified file.
    * Work only in develop mode.
