@@ -22,7 +22,7 @@ declare type JSObjectProxyOnFinalize = () => void;
 
 declare type JSObjectProxyOnCallMethod = (
   name: string,
-  ...arguments: any[]
+  ...args: any[]
 ) => any;
 
 /**
