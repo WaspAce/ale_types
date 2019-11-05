@@ -2,6 +2,10 @@
  * Class representing image.
  */
 declare class Image {
+  constructor(
+    rect?: Rect
+  );
+
   /**
    * X coordinate to paint relative to other Image or [[GuiPanel]].
    */
