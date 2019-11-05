@@ -311,7 +311,7 @@
    */
   execute_function(
     object_: V8Value,
-    arguments: V8Value[]): V8Value;
+    arguments?: V8Value[]): V8Value;
 
   /**
    * Execute the function using the specified V8 context.
@@ -324,5 +324,5 @@
   execute_function_with_context(
     context: V8Context,
     object_: V8Value,
-    arguments: V8Value[]): V8Value;
+    arguments?: V8Value[]): V8Value;
  }
