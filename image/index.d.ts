@@ -45,7 +45,14 @@ declare class Image {
   ): void;
 
   /**
-   * 
+   * Loads image from specified file.
+   * Work only in develop mode.
+   */
+  load_from_file(
+    file_name: string
+  ): void;
+
+  /**
    * Save this image to specified file.
    * Work only in develop mode.
    */
