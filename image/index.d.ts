@@ -59,4 +59,10 @@ declare class Image {
   save_to_file(
     file_name: string
   ): void;
+
+  /**
+   * Clears image.
+   */
+  clear(): void;
 }
+
