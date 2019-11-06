@@ -22,6 +22,10 @@ declare type RenderHandlerOnPaint = (
   images: Image[]
 ) => void;
 
+declare type RenderHandlerOnPainted = (
+  browser: Browser
+) => void;
+
 declare type RenderHandlerOnScrollOffsetChanged = (
   browser: Browser,
   x: number,
@@ -98,6 +102,12 @@ declare class RenderHandler {
    * @event
    */
   on_paint: RenderHandlerOnPaint;
+
+  /**
+   * Called when an elements of |browser| was painted.
+   * @event
+   */
+  on_painted: RenderHandlerOnPainted;
 
   /**
    * TODO
