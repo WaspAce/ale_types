@@ -7,6 +7,13 @@ declare class Rect {
   public width: number;
   public height: number;
 
+  constructor(
+    x?: number,
+    y?: number,
+    width?: number,
+    height?: number
+  );
+
   /**
    * Copy properties from **that**.
    */
