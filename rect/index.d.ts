@@ -31,4 +31,11 @@ declare class Rect {
   public is_equal(
     that: Rect
   ): boolean;
+
+  /**
+   * @returns **true** if rect intersects that rect.
+   */
+  public intersects(
+    that: Rect
+  ): boolean;
 }
