@@ -18,6 +18,11 @@ declare class GuiEdit extends GuiControl {
   );
 
   /**
+   * 
+   */
+  text: string;
+
+  /**
    * Occurs when the text for the edit control may have changed.
    * @event
    */
