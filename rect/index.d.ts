@@ -38,4 +38,11 @@ declare class Rect {
   public intersects(
     that: Rect
   ): boolean;
+
+  /**
+   * @returns intersection rect.
+   */
+  public intersection(
+    that: Rect
+  ): Rect;
 }
