@@ -45,4 +45,11 @@ declare class Rect {
   public intersection(
     that: Rect
   ): Rect;
+
+  /**
+   * @returns **true** if rect has point.
+   */
+  public has_point(
+    point: Point
+  ): boolean;
 }
