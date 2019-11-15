@@ -40,9 +40,20 @@ declare class Response {
     /**
      * Get the value for the specified response header field.
      */
-    get_header(
+    get_header_by_name(
         name: string
     ): string;
+
+    /**
+     * Set the header |name| to |value|. If |overwrite| is true (1) any existing
+     * values will be replaced with the new value. If |overwrite| is false (0) any
+     * existing values will not be overwritten.
+     */
+    set_header_by_name(
+        name: string,
+        value: string,
+        overwrite?: boolean
+    ): void;
 
     /**
      * Get all response header fields.
