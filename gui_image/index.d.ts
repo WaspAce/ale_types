@@ -12,6 +12,14 @@ declare class GuiImage extends GuiControl {
   );
 
   /**
+   * Loads image from specified file.
+   * Works only in develop mode.
+   */
+  load_from_file(
+    file_name: string
+  ): void;
+
+  /**
    * Draw |images| on this control's canvas.
    */
   paint(

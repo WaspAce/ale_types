@@ -46,7 +46,7 @@ declare class Image {
 
   /**
    * Loads image from specified file.
-   * Work only in develop mode.
+   * Works only in develop mode.
    */
   load_from_file(
     file_name: string
@@ -54,7 +54,7 @@ declare class Image {
 
   /**
    * Save this image to specified file.
-   * Work only in develop mode.
+   * Works only in develop mode.
    */
   save_to_file(
     file_name: string
