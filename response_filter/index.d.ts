@@ -1,7 +1,8 @@
 declare type ResponseFilterOnInitFilter = () => boolean;
 
 declare type ResponseFilterOnFilter = (
-  //TODO
+  bytes_in: number[],
+  bytes_out: number[]
 ) => ResponseFilterStatus
 
 /**
