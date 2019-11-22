@@ -1,6 +1,6 @@
 declare type CefAppOnContextInitialized = () => void;
 
-declare class CEF_APP {
+declare class CefApp {
 
   /**
    * 
