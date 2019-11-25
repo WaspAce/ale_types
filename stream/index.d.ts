@@ -1,4 +1,4 @@
-declare interface Stream {
+declare class Stream {
   load_from_stream(
     that: Stream
   );
