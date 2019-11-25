@@ -6,7 +6,9 @@ type ResolveHookCallback = (
 declare class loader {
     static compile_module(
         name: string,
-        code: string
+        code: string,
+        referrer_module_path?: string,
+        absolute_path?: string
     ): void;
 
     static eval_script(
