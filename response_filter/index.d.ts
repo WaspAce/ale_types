@@ -1,10 +1,10 @@
 declare type ResponseFilterOnInitFilter = () => boolean;
 
 declare type ResponseFilterOnFilter = (
-  bytes_in: number[],
-  bytes_out: number[],
-  bytes_out_size: number
-) => ResponseFilterStatus
+  in_data: Stream,
+  out_data: Stream,
+  out_data_max_size: number
+) => ResponseFilterStatus;
 
 /**
  * Class to filter resource response content.
