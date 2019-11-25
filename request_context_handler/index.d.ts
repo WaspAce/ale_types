@@ -1,8 +1,3 @@
-declare interface RequestContextHandlerOnGetResourceRequestHandlerResult {
-  disable_default_handling: boolean;
-  handler: ResourceRequestHandler;
-}
-
 declare type RequestContextHandlerOnRequestContextInitialized = (
   request_context: RequestContext
 ) => void;
@@ -42,10 +37,7 @@ declare type RequestContextHandlerOnBeforePluginLoad = (
 * modified in this callback. |is_navigation| will be true (1) if the resource
 * request is a navigation. |is_download| will be true (1) if the resource
 * request is a download. |request_initiator| is the origin (scheme + domain)
-* of the page that initiated the request. Set |disable_default_handling| to
-* true (1) to disable default handling of the request, in which case it will
-* need to be handled via [[ResourceRequestHandler]].on_get_resource_handler
-* or it will be canceled. To allow the resource load to proceed with default
+* of the page that initiated the request. To allow the resource load to proceed with default
 * handling return handler as NULL. To specify a handler for the resource return
 * handler as a [[ResourceRequestHandler]] object. This function will not be called if
 * the client associated with |browser| returns a non-NULL value from
@@ -59,7 +51,7 @@ declare type RequestContextHandlerOnGetResourceRequestHandler = (
   is_navigation: boolean,
   is_download: boolean,
   request_initiator: string
-) => RequestContextHandlerOnGetResourceRequestHandlerResult;
+) => ResourceRequestHandler;
 
 /**
  * The handler instance will not be released until all objects related to the context have

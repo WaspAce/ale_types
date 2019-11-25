@@ -1,8 +1,3 @@
-declare interface RequestHandlerOnGetResourceRequestHandlerResult {
-  disable_default_handling: boolean;
-  handler: ResourceRequestHandler;
-}
-
 declare interface RequestHandlerOnGetAuthCredentialsResult {
   username: string;
   password: string;
@@ -49,10 +44,7 @@ declare type RequestHandlerOnOpenUrlFromTab = (
 * in this callback. |is_navigation| will be true (1) if the resource request
 * is a navigation. |is_download| will be true (1) if the resource request is
 * a download. |request_initiator| is the origin (scheme + domain) of the page
-* that initiated the request. Set |disable_default_handling| to true (1) to
-* disable default handling of the request, in which case it will need to be
-* handled via [[ResourceRequestHandler]].on_get_resource_handler or it will
-* be canceled. To allow the resource load to proceed with default handling
+* that initiated the request. To allow the resource load to proceed with default handling
 * return handler as NULL. To specify a handler for the resource return handler as a
 * [[ResourceRequestHandler]] object. If this callback returns NULL the
 * same function will be called on the associated cef_request_tContextHandler,
@@ -65,7 +57,7 @@ declare type RequestHandlerOnGetResourcerequestHandler = (
   is_navigation: boolean,
   is_download: boolean,
   request_initiator: string
-) => RequestHandlerOnGetResourceRequestHandlerResult;
+) => ResourceRequestHandler;
 
 /**
 * |origin_url| is the origin making this authentication request. |is_proxy|
