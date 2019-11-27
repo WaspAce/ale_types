@@ -37,6 +37,11 @@ declare class CefApp {
   );
 
   /**
+   * This function should be called shut down the CEF browser process before the application exits.
+   */
+  static shutdown();
+
+  /**
    * 
    */
   static get_global_request_context(): RequestContext;
